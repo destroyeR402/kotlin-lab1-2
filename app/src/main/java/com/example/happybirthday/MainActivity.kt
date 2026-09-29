@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -43,7 +45,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
-    Box(modifier = modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    ) {
         Text(
             text = message,
             fontSize = 100.sp,
@@ -55,7 +60,7 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(Alignment.BottomEnd)
+                .align(Alignment.End)
         )
     }
 }
